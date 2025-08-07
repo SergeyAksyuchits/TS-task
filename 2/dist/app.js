@@ -422,8 +422,7 @@
 //     }
 // }
 // console.log(max);
-22.;
-// // 22Создайте массив объектов, представляющих сотрудников, с полями "имя" и
+// // 22.Создайте массив объектов, представляющих сотрудников, с полями "имя" и
 // "зарплата". Найдите среднюю зарплату всех сотрудников.
 // const employees = [
 //     {
@@ -457,32 +456,149 @@
 // суммарную стоимостью всех товаров учитывая количество каждого.
 // Итог = цена_1_товара * кол-во_1_товара + цена_2_товара * кол-во_2_товара + ...
 // 23.
-const products = [
-    {
-        name: "Хлеб",
-        price: 30,
-        quantity: 2
-    },
-    {
-        name: "Молоко",
-        price: 60,
-        quantity: 3
-    },
-    {
-        name: "Яблоки",
-        price: 120,
-        quantity: 1
-    },
-    {
-        name: "Сыр",
-        price: 250,
-        quantity: 2
-    },
-    {
-        name: "Мясо",
-        price: 400,
-        quantity: 1
-    }
-];
-const res = products.reduce((sum, el) => sum + el.quantity * el.price, 0);
+// const products = [
+//     {
+//         name: "Хлеб",
+//         price: 30,
+//         quantity: 2
+//     },
+//     {
+//         name: "Молоко",
+//         price: 60,
+//         quantity: 3
+//     },
+//     {
+//         name: "Яблоки",
+//         price: 120,
+//         quantity: 1
+//     },
+//     {
+//         name: "Сыр",
+//         price: 250,
+//         quantity: 2
+//     },
+//     {
+//         name: "Мясо",
+//         price: 400,
+//         quantity: 1
+//     }
+// ]
+// const res = products.reduce((sum, el) => sum + el.quantity * el.price,0)
+// console.log(res);
+// 1. Отфильтруй массив users, чтобы получить только активных пользователей.
+// interface Obj {
+//     id: number;
+//     name: string;
+//     isActive: boolean;
+// }
+// const users: Obj[] = [
+//     { id: 1, name: 'Alice', isActive: true },
+//     { id: 2, name: 'Bob', isActive: false },
+//     { id: 3, name: 'Charlie', isActive: true },
+//     { id: 4, name: 'Diana', isActive: false },
+// ];
+// const res = users.filter((el) => el.isActive)
+// console.log(res);
+// 2. Преобразуй массив users в массив строк из имён пользователей.
+// interface Obj {
+//     id: number;
+//     name: string;
+//     isActive: boolean;
+// }
+// const users: Obj[] = [
+//     { id: 1, name: 'Alice', isActive: true },
+//     { id: 2, name: 'Bob', isActive: false },
+//     { id: 3, name: 'Charlie', isActive: true },
+//     { id: 4, name: 'Diana', isActive: false },
+// ];
+// const res = users.map((el) => el.name)
+// console.log(res);
+// 3. Проверь, есть ли хотя бы один неактивный пользователь. Если есть - true, иначе - false
+// interface Obj {
+//     id: number;
+//     name: string;
+//     isActive: boolean;
+// }
+// const users: Obj[] = [
+//     { id: 1, name: 'Alice', isActive: true },
+//     { id: 2, name: 'Bob', isActive: false },
+//     { id: 3, name: 'Charlie', isActive: true },
+//     { id: 4, name: 'Diana', isActive: false },
+// ]
+// const res = users.some((el) => el.isActive === false)
+// console.log(res);
+// 4. Из массива students отфильтруй только тех, у кого балл выше 80.
+// interface Obj {
+//     id: number;
+//     name: string;
+//     score: number
+// }
+// const students: Obj[] = [
+//     { id: 1, name: 'Anna', score: 75 },
+//     { id: 2, name: 'John', score: 92 },
+//     { id: 3, name: 'Tom', score: 88 },
+// ];
+// const res = students.filter((el) => el.score > 80)
+// console.log(res);
+// 5. Отобрази список имён всех курсов, которые проходят пользователи. Курсы находятся внутри каждого пользователя в массиве courses.
+// Результат: ['TS', 'React', 'Node', 'TS', 'HTML']
+// interface Obj {
+//     id: number;
+//     name: string;
+//     courses: string[];
+// }
+// const users: Obj[] = [
+//     { id: 1, name: 'Alice', courses: ['TS', 'React'] },
+//     { id: 2, name: 'Bob', courses: ['Node', 'TS'] },
+//     { id: 3, name: 'Clara', courses: ['HTML'] },
+// ];
+// const res = users.flatMap((el)=>el.courses)
+// console.log(res);
+// 6. Из массива projects получи список названий только тех проектов, в которых участвует пользователь с userId === 3.
+// Результат: ['CRM', 'Mobile App']
+// interface Obj {
+//     id: number;
+//     name: string;
+//     members: number[]
+// }
+// const projects = [
+//     { id: 1, name: 'CRM', members: [1, 2, 3] },
+//     { id: 2, name: 'Landing Page', members: [2] },
+//     { id: 3, name: 'Mobile App', members: [3, 4] },
+// ];
+// const res = projects
+//     .filter((el) => el.members.includes(3))
+//     .map(el => el.name)
+// console.log(res);
+// // 7. В массиве events найди все записи, которые происходят в 2023 году.
+// Результат:  ["Conference", "Workshop"]
+// interface Obj {
+//     id: number;
+//     name: string;
+//     date: string;
+// }
+// const events: Obj[] = [
+//     { id: 1, name: 'Conference', date: '2023-05-01' },
+//     { id: 2, name: 'Workshop', date: '2023-11-15' },
+//     { id: 3, name: 'Webinar', date: '2025-01-20' },
+// ];
+// const res = events
+//     .filter((el) => el.date.includes("2023"))
+//     .map(el => el.name)
+//     console.log(res);
+// Создайте массив строк и проверьте, есть ли в нем хотя бы одно слово-палиндром.
+const array = ["anna", "asfa", "home"];
+const res = [];
+const str = ["a", "e", "i", "o", "u"];
+for (let i = 0; i < array.length; i++) {
+    const result = array[i].split('').filter(el => str.includes(el));
+    res.push(result.join(""));
+}
 console.log(res);
+// for (let i = 0; i < arr.length; i++) {
+//     const result = arr[i].split('').filter((el) => {
+//         return str.includes(el)
+//     })
+//     res.push(result.join(''))
+// }
+// console.log(res);
